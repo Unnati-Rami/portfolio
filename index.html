@@ -136,6 +136,10 @@
     /* ============ HEADER ============ */
     .header {
       position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 36px;
       padding: 42px 40px;
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(20, 33, 58, 0.7), rgba(14, 22, 42, 0.6));
@@ -156,10 +160,10 @@
       opacity: 0.6;
     }
 
-    .header-content {
+    .header-left {
       position: relative;
       z-index: 2;
-      max-width: 850px;
+      flex: 1;
     }
 
     h1.name {
@@ -215,6 +219,77 @@
       display: flex;
       align-items: center;
       gap: 6px;
+    }
+
+    /* REAL PHOTO CONTAINER - GUARANTEED VISIBILITY & FALLBACK */
+    .header-right {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .photo-container {
+      width: 210px;
+      height: 210px;
+      border-radius: 50%;
+      padding: 5px;
+      background: linear-gradient(135deg, var(--cyan), var(--teal), var(--blue));
+      box-shadow: 0 0 35px rgba(77, 216, 255, 0.4);
+      position: relative;
+    }
+
+    .photo-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      overflow: hidden;
+      background: #14213a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .photo-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Fallback initials if image file fails to load */
+    .photo-inner::before {
+      content: "UR";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 42px;
+      color: var(--cyan);
+      z-index: 1;
+    }
+
+    .photo-container::after {
+      content: "VERIFIED SEC_OPERATIVE";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--mono);
+      font-size: 8.5px;
+      background: var(--panel-solid);
+      color: var(--teal);
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      letter-spacing: 0.05em;
     }
 
     /* ============ LAYOUT ============ */
@@ -775,7 +850,12 @@
         position: static;
       }
       .header {
+        flex-direction: column;
+        align-items: flex-start;
         padding: 26px;
+      }
+      .photo-container {
+        align-self: center;
       }
       .cert-grid, .about-grid {
         grid-template-columns: 1fr;
@@ -811,7 +891,7 @@
 
     <!-- HEADER -->
     <header class="header" id="about">
-      <div class="header-content">
+      <div class="header-left">
         <h1 class="name">UNNATI RAMI</h1>
         <div class="title">Cybersecurity Undergrad & Software Engineer</div>
         <p class="summary">Dedicated B.Tech Computer Science (Cyber Security) undergraduate at Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV) with a rigorous technical focus on secure system architecture, defensive engineering, and automated vulnerability tracking. Actively building robust security tools and refining offensive-defensive strategies via TryHackMe hands-on labs.</p>
@@ -819,6 +899,13 @@
           <span class="h-badge">🛡️ RGPV Cyber Security</span>
           <span class="h-badge">💻 Java & OOP Expert</span>
           <span class="h-badge">🔍 Threat Analyst</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div class="photo-container">
+          <div class="photo-inner">
+            <img src="passport photo.jpg" alt="Unnati Rami Profile Photo" onerror="this.style.display='none';">
+          </div>
         </div>
       </div>
     </header>
