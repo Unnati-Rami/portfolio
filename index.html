@@ -221,7 +221,7 @@
       gap: 6px;
     }
 
-    /* REAL PHOTO CONTAINER */
+    /* REAL PHOTO CONTAINER - ENLARGED & FIXED VISIBILITY */
     .header-right {
       position: relative;
       z-index: 2;
@@ -229,12 +229,12 @@
     }
 
     .photo-container {
-      width: 175px;
-      height: 175px;
+      width: 210px;
+      height: 210px;
       border-radius: 50%;
-      padding: 4px;
+      padding: 5px;
       background: linear-gradient(135deg, var(--cyan), var(--teal), var(--blue));
-      box-shadow: 0 0 25px rgba(77, 216, 255, 0.3);
+      box-shadow: 0 0 35px rgba(77, 216, 255, 0.4);
       position: relative;
     }
 
@@ -243,14 +243,18 @@
       height: 100%;
       border-radius: 50%;
       overflow: hidden;
-      background: var(--bg-deep);
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     .photo-inner img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 20%;
+      display: block;
     }
 
     .photo-container::after {
@@ -882,7 +886,6 @@
       <div class="header-right">
         <div class="photo-container">
           <div class="photo-inner">
-            <!-- Replace 'passport photo.jpg' with your actual hosted image URL or local file path if needed -->
             <img src="passport photo.jpg" alt="Unnati Rami Profile Photo">
           </div>
         </div>
@@ -1035,7 +1038,7 @@
                 <span class="tl-year">2024</span>
               </div>
               <div class="tl-sub">Govt. H.S. Excellence School, Madhav Nagar, Ujjain</div>
-              <div class="tl-meta">Completed with an aggregate score of 83% with a specialized focus on core sciences and mathematics foundation.</div>
+              <div class="tl-meta">Percentage: 83%</div>
             </div>
             <div class="tl-item">
               <div class="tl-head">
@@ -1043,7 +1046,7 @@
                 <span class="tl-year">2022</span>
               </div>
               <div class="tl-sub">Govt. H.S. Excellence School, Madhav Nagar, Ujjain</div>
-              <div class="tl-meta">Graduated with an honors-level aggregate score of 91%.</div>
+              <div class="tl-meta">Percentage: 91%</div>
             </div>
           </div>
         </section>
