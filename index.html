@@ -80,6 +80,59 @@
       z-index: 1;
     }
 
+    /* ============ NAVBAR ============ */
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px 24px;
+      background: rgba(14, 25, 48, 0.75);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      backdrop-filter: blur(14px);
+      margin-bottom: 20px;
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--cyan);
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-logo span {
+      width: 8px;
+      height: 8px;
+      background: var(--teal);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
     /* ============ HEADER ============ */
     .header {
       position: relative;
@@ -87,12 +140,11 @@
       align-items: center;
       justify-content: space-between;
       gap: 32px;
-      padding: 34px 40px;
+      padding: 38px 40px;
       border-radius: var(--radius);
       background: linear-gradient(135deg, rgba(20, 33, 58, 0.65), rgba(14, 22, 42, 0.55));
       border: 1px solid var(--border);
       backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
       overflow: hidden;
       margin-bottom: 22px;
     }
@@ -142,11 +194,11 @@
     }
 
     .summary {
-      max-width: 620px;
-      margin-top: 18px;
+      max-width: 640px;
+      margin-top: 16px;
       color: var(--text-dim);
-      font-size: 14.5px;
-      line-height: 1.65;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     .shield-wrap {
@@ -189,7 +241,7 @@
     /* ============ LAYOUT ============ */
     .layout {
       display: grid;
-      grid-template-columns: 30% 1fr;
+      grid-template-columns: 31% 1fr;
       gap: 22px;
       align-items: start;
     }
@@ -202,14 +254,18 @@
       -webkit-backdrop-filter: blur(16px);
       padding: 26px;
       position: relative;
+      margin-bottom: 20px;
+    }
+
+    .card:last-child {
+      margin-bottom: 0;
     }
 
     .sidebar {
       display: flex;
       flex-direction: column;
-      gap: 18px;
       position: sticky;
-      top: 20px;
+      top: 76px;
     }
 
     .section-label {
@@ -238,9 +294,9 @@
     }
 
     .avatar {
-      width: 96px;
-      height: 96px;
-      margin: 0 auto 16px;
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 14px;
       border-radius: 50%;
       position: relative;
       display: flex;
@@ -266,8 +322,8 @@
     }
 
     .avatar-inner {
-      width: 76px;
-      height: 76px;
+      width: 72px;
+      height: 72px;
       border-radius: 50%;
       background: radial-gradient(circle at 35% 30%, rgba(77, 216, 255, 0.35), rgba(14, 22, 42, 0.9) 70%);
       display: flex;
@@ -275,7 +331,7 @@
       justify-content: center;
       font-family: var(--display);
       font-weight: 800;
-      font-size: 26px;
+      font-size: 24px;
       color: var(--cyan-bright);
       border: 1px solid var(--border);
     }
@@ -284,7 +340,6 @@
       font-family: var(--display);
       font-weight: 700;
       font-size: 17px;
-      margin-top: 4px;
     }
 
     .profile-role {
@@ -306,7 +361,7 @@
       display: flex;
       align-items: center;
       gap: 11px;
-      font-size: 13.5px;
+      font-size: 13px;
     }
 
     .contact-list .ic {
@@ -324,7 +379,7 @@
 
     .contact-list .lbl {
       color: var(--text-dimmer);
-      font-size: 10.5px;
+      font-size: 10px;
       font-family: var(--mono);
       text-transform: uppercase;
       letter-spacing: 0.06em;
@@ -334,6 +389,7 @@
     .contact-list .val {
       color: var(--text);
       word-break: break-word;
+      font-size: 12.5px;
     }
 
     .contact-list a {
@@ -357,8 +413,8 @@
     .skill-top {
       display: flex;
       justify-content: space-between;
-      font-size: 12.5px;
-      margin-bottom: 6px;
+      font-size: 12px;
+      margin-bottom: 5px;
     }
 
     .skill-top .sname {
@@ -369,11 +425,11 @@
     .skill-top .slevel {
       font-family: var(--mono);
       color: var(--text-dimmer);
-      font-size: 11px;
+      font-size: 10.5px;
     }
 
     .meter {
-      height: 6px;
+      height: 5px;
       border-radius: 4px;
       background: rgba(255, 255, 255, 0.06);
       overflow: hidden;
@@ -390,49 +446,53 @@
     .tool-tags {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 16px;
+      gap: 7px;
+      margin-top: 14px;
     }
 
     .tag {
       font-family: var(--mono);
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: 7px;
+      font-size: 10.5px;
+      padding: 4px 9px;
+      border-radius: 6px;
       background: rgba(45, 217, 185, 0.06);
       border: 1px solid rgba(45, 217, 185, 0.25);
       color: var(--teal);
     }
 
-    /* soft skills */
+    /* pill lists */
     .pill-list {
       display: flex;
-      flex-direction: column;
-      gap: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
     }
 
-    .pill-list li {
+    .pill-item {
+      font-family: var(--mono);
+      font-size: 11.5px;
+      padding: 6px 11px;
+      border-radius: 8px;
+      background: rgba(91, 140, 255, 0.06);
+      border: 1px solid rgba(91, 140, 255, 0.22);
+      color: var(--text);
       display: flex;
       align-items: center;
-      gap: 10px;
-      font-size: 13px;
-      color: var(--text-dim);
+      gap: 6px;
     }
 
     .pill-dot {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
       border-radius: 50%;
       background: var(--cyan);
-      box-shadow: 0 0 6px var(--cyan);
-      flex-shrink: 0;
+      box-shadow: 0 0 5px var(--cyan);
     }
 
     .quote-box {
       border-left: 2px solid var(--cyan);
-      padding-left: 14px;
+      padding-left: 12px;
       font-family: var(--mono);
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-dim);
       font-style: italic;
       line-height: 1.6;
@@ -442,12 +502,11 @@
     .main {
       display: flex;
       flex-direction: column;
-      gap: 18px;
     }
 
     h2.sec-title {
       font-family: var(--display);
-      font-size: 20px;
+      font-size: 19px;
       font-weight: 700;
       display: flex;
       align-items: center;
@@ -458,7 +517,7 @@
 
     h2.sec-title .num {
       font-family: var(--mono);
-      font-size: 12px;
+      font-size: 11px;
       color: var(--cyan);
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -483,7 +542,7 @@
 
     .tl-item {
       position: relative;
-      padding-bottom: 22px;
+      padding-bottom: 24px;
     }
 
     .tl-item:last-child {
@@ -514,16 +573,16 @@
     .tl-title {
       font-family: var(--display);
       font-weight: 700;
-      font-size: 15.5px;
+      font-size: 15px;
     }
 
     .tl-year {
       font-family: var(--mono);
-      font-size: 11.5px;
+      font-size: 11px;
       color: var(--cyan);
       background: rgba(77, 216, 255, 0.08);
       border: 1px solid var(--border);
-      padding: 2px 9px;
+      padding: 2px 8px;
       border-radius: 6px;
       white-space: nowrap;
     }
@@ -535,16 +594,17 @@
     }
 
     .tl-meta {
-      font-size: 12.5px;
+      font-size: 12px;
       color: var(--text-dimmer);
       margin-top: 5px;
       font-family: var(--mono);
+      line-height: 1.5;
     }
 
     /* projects grid */
     .proj-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
       gap: 18px;
     }
 
@@ -552,7 +612,7 @@
       background: linear-gradient(160deg, rgba(20, 33, 58, 0.6), rgba(10, 16, 31, 0.5));
       border: 1px solid var(--border);
       border-radius: 14px;
-      padding: 20px;
+      padding: 22px;
       display: flex;
       flex-direction: column;
       gap: 12px;
@@ -561,7 +621,7 @@
 
     .proj-card:hover {
       border-color: var(--border-strong);
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .proj-head {
@@ -573,7 +633,8 @@
     .proj-title {
       font-family: var(--display);
       font-weight: 700;
-      font-size: 15.5px;
+      font-size: 16px;
+      color: var(--cyan-bright);
     }
 
     .proj-idx {
@@ -583,15 +644,39 @@
     }
 
     .proj-desc {
+      font-size: 13.5px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    .proj-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .proj-bullets li {
       font-size: 13px;
       color: var(--text-dim);
-      line-height: 1.55;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .proj-bullets li::before {
+      content: "›";
+      color: var(--cyan);
+      font-weight: 700;
+      font-family: var(--mono);
     }
 
     .proj-stack {
       display: flex;
       flex-wrap: wrap;
       gap: 7px;
+      margin-top: 6px;
     }
 
     .terminal {
@@ -603,8 +688,7 @@
       font-size: 11.5px;
       color: #7ee9ff;
       line-height: 1.65;
-      position: relative;
-      overflow: hidden;
+      margin-top: 6px;
     }
 
     .term-bar {
@@ -628,10 +712,6 @@
       white-space: pre-wrap;
     }
 
-    .term-prompt {
-      color: var(--teal);
-    }
-
     .term-muted {
       color: var(--text-dimmer);
     }
@@ -649,11 +729,38 @@
       50% { opacity: 0; }
     }
 
-    /* certifications / achievements */
-    .two-col {
+    /* certs / experience layout */
+    .cert-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 18px;
+      gap: 16px;
+    }
+
+    .cert-box {
+      background: rgba(14, 25, 48, 0.4);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cert-title {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .cert-org {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--cyan);
+    }
+
+    .cert-desc {
+      font-size: 12.5px;
+      color: var(--text-dim);
     }
 
     .list-check {
@@ -669,6 +776,7 @@
       font-size: 13.5px;
       color: var(--text-dim);
       align-items: flex-start;
+      line-height: 1.5;
     }
 
     .check-ic {
@@ -684,32 +792,6 @@
       color: var(--cyan);
     }
 
-    .interests-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .interest-chip {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      padding: 8px 14px;
-      border-radius: 10px;
-      background: rgba(91, 140, 255, 0.06);
-      border: 1px solid rgba(91, 140, 255, 0.25);
-      color: var(--text);
-    }
-
-    .interest-chip .dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: var(--blue);
-      box-shadow: 0 0 6px var(--blue);
-    }
-
     footer {
       margin-top: 26px;
       text-align: center;
@@ -719,7 +801,7 @@
 
     .footer-line {
       font-family: var(--mono);
-      font-size: 12.5px;
+      font-size: 12px;
       letter-spacing: 0.08em;
       color: var(--text-dim);
     }
@@ -727,15 +809,6 @@
     .footer-line .sep {
       color: var(--cyan);
       margin: 0 8px;
-    }
-
-    .binary-row {
-      font-family: var(--mono);
-      font-size: 9px;
-      color: rgba(94, 234, 255, 0.18);
-      letter-spacing: 3px;
-      margin-top: 10px;
-      user-select: none;
     }
 
     @media (max-width: 880px) {
@@ -753,11 +826,11 @@
       .shield-wrap {
         align-self: center;
       }
-      .proj-grid {
+      .cert-grid {
         grid-template-columns: 1fr;
       }
-      .two-col {
-        grid-template-columns: 1fr;
+      .nav-links {
+        display: none;
       }
     }
 
@@ -766,23 +839,30 @@
         padding: 16px 12px 40px;
       }
     }
-
-    @media print {
-      body::before { display: none; }
-      body { background: #fff; color: #111; }
-    }
   </style>
 </head>
 
 <body>
   <div class="wrap">
 
+    <!-- NAVIGATION BAR -->
+    <nav class="nav-bar">
+      <div class="nav-logo"><span></span>UNNATI.RAMI // PORTFOLIO</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" id="about">
       <div class="header-left">
         <h1 class="name">UNNATI RAMI</h1>
-        <div class="title">Cybersecurity Student</div>
-        <p class="summary">Cybersecurity-focused B.Tech Computer Science (Cyber Security) student with a strong foundation in networking, Linux, and security fundamentals. Hands-on experience through TryHackMe labs, certifications, and Java-based security tools, including a cross-platform File Integrity Monitor. Seeking a cybersecurity internship to contribute to real-world security projects.</p>
+        <div class="title">Cybersecurity Student & Software Engineer</div>
+        <p class="summary">Dedicated B.Tech Computer Science (Cyber Security) student at Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV) with an intense passion for defensive engineering, secure application architecture, and ethical hacking. Experienced in building automated cross-platform security tools, analyzing network vulnerabilities via TryHackMe labs, and maintaining robust system baseline logic.</p>
       </div>
       <div class="shield-wrap" aria-hidden="true">
         <svg viewBox="0 0 160 180" fill="none">
@@ -838,11 +918,11 @@
             <div class="avatar-inner">UR</div>
           </div>
           <div class="profile-name">Unnati Rami</div>
-          <div class="profile-role">Cybersecurity Student</div>
+          <div class="profile-role">Cyber Security Undergrad</div>
         </div>
 
-        <div class="card">
-          <div class="section-label">Contact</div>
+        <div class="card" id="contact">
+          <div class="section-label">Direct Contact</div>
           <ul class="contact-list">
             <li>
               <span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -867,7 +947,7 @@
                   <path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg></span>
-              <span><span class="lbl">Location</span><span class="val">Ujjain / India</span></span>
+              <span><span class="lbl">Location</span><span class="val">Ujjain / Bhopal, India</span></span>
             </li>
             <li>
               <span class="ic"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -895,60 +975,51 @@
         </div>
 
         <div class="card">
-          <div class="section-label">Technical Skills</div>
+          <div class="section-label">Core Competencies</div>
           <div class="skill-row">
-            <div class="skill-top"><span class="sname">Java</span><span class="slevel">ADVANCED</span></div>
+            <div class="skill-top"><span class="sname">Java & OOP Methodology</span><span class="slevel">ADVANCED</span></div>
             <div class="meter">
-              <div class="meter-fill" style="width:88%"></div>
+              <div class="meter-fill" style="width:90%"></div>
             </div>
           </div>
           <div class="skill-row">
-            <div class="skill-top"><span class="sname">Networking & Security</span><span class="slevel">PROFICIENT</span></div>
+            <div class="skill-top"><span class="sname">System & Network Security</span><span class="slevel">PROFICIENT</span></div>
             <div class="meter">
               <div class="meter-fill" style="width:85%"></div>
             </div>
           </div>
           <div class="skill-row">
-            <div class="skill-top"><span class="sname">Linux / Kali</span><span class="slevel">PROFICIENT</span></div>
+            <div class="skill-top"><span class="sname">Linux Environment & Kali</span><span class="slevel">PROFICIENT</span></div>
             <div class="meter">
-              <div class="meter-fill" style="width:80%"></div>
+              <div class="meter-fill" style="width:82%"></div>
             </div>
           </div>
           <div class="skill-row">
-            <div class="skill-top"><span class="sname">Python Automation</span><span class="slevel">INTERMEDIATE</span></div>
+            <div class="skill-top"><span class="sname">Vulnerability Assessment</span><span class="slevel">INTERMEDIATE</span></div>
             <div class="meter">
-              <div class="meter-fill" style="width:75%"></div>
+              <div class="meter-fill" style="width:78%"></div>
             </div>
           </div>
           <div class="tool-tags">
-            <span class="tag">File Integrity Monitor</span>
-            <span class="tag">TryHackMe</span>
             <span class="tag">Wireshark</span>
             <span class="tag">Nmap</span>
-            <span class="tag">Git & GitHub</span>
+            <span class="tag">Git</span>
+            <span class="tag">SHA-256 Hashing</span>
+            <span class="tag">File Integrity</span>
           </div>
         </div>
 
         <div class="card">
-          <div class="section-label">Languages</div>
-          <ul class="pill-list">
-            <li><span class="pill-dot"></span>English</li>
-            <li><span class="pill-dot"></span>Hindi</li>
-          </ul>
+          <div class="section-label">Spoken Languages</div>
+          <div class="pill-list">
+            <span class="pill-item"><span class="pill-dot"></span>English (Fluent)</span>
+            <span class="pill-item"><span class="pill-dot"></span>Hindi (Native)</span>
+          </div>
         </div>
 
         <div class="card">
-          <div class="section-label">Soft Skills</div>
-          <ul class="pill-list">
-            <li><span class="pill-dot"></span>Problem Solving</li>
-            <li><span class="pill-dot"></span>Analytical Thinking</li>
-            <li><span class="pill-dot"></span>Collaboration</li>
-            <li><span class="pill-dot"></span>Continuous Learning</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="quote-box">"Security is not a product, but a process."</div>
+          <div class="section-label">Professional Philosophy</div>
+          <div class="quote-box">"Security is not a static perimeter, but a continuous cycle of identification, hardening, and vigilance."</div>
         </div>
 
       </aside>
@@ -956,8 +1027,8 @@
       <!-- MAIN -->
       <main class="main">
 
-        <section class="card">
-          <h2 class="sec-title"><span class="num">01</span>Education</h2>
+        <section class="card" id="education">
+          <h2 class="sec-title"><span class="num">01</span>Academic Background</h2>
           <div class="timeline">
             <div class="tl-item">
               <div class="tl-head">
@@ -965,109 +1036,123 @@
                 <span class="tl-year">2024 - 2028</span>
               </div>
               <div class="tl-sub">Rajiv Gandhi Proudyogiki Vishwavidyalaya (RGPV) • 4th Semester</div>
-              <div class="tl-meta">Focusing on core cybersecurity principles, cryptography, and secure system design.</div>
+              <div class="tl-meta">Rigorous coursework covering Object-Oriented Programming Methodology (CY-305), cryptography principles, data structures, network protocols, and secure system modeling.</div>
             </div>
             <div class="tl-item">
               <div class="tl-head">
-                <span class="tl-title">Higher Secondary (12th Grade) — MP Board</span>
+                <span class="tl-title">Higher Secondary Education (12th Grade — MP Board)</span>
                 <span class="tl-year">2024</span>
               </div>
               <div class="tl-sub">Govt. H.S. Excellence School, Madhav Nagar, Ujjain</div>
-              <div class="tl-meta">Percentage: 83%</div>
+              <div class="tl-meta">Completed with an aggregate score of 83% with a focus on core sciences and mathematics foundation.</div>
             </div>
             <div class="tl-item">
               <div class="tl-head">
-                <span class="tl-title">High School (10th Grade) — MP Board</span>
+                <span class="tl-title">High School Education (10th Grade — MP Board)</span>
                 <span class="tl-year">2022</span>
               </div>
               <div class="tl-sub">Govt. H.S. Excellence School, Madhav Nagar, Ujjain</div>
-              <div class="tl-meta">Percentage: 91%</div>
+              <div class="tl-meta">Graduated with an honors-level aggregate score of 91%.</div>
             </div>
           </div>
         </section>
 
-        <section class="card">
-          <h2 class="sec-title"><span class="num">02</span>Projects</h2>
+        <section class="card" id="projects">
+          <h2 class="sec-title"><span class="num">02</span>Technical Projects</h2>
           <div class="proj-grid">
 
             <div class="proj-card">
               <div class="proj-head">
                 <span class="proj-title">Java File Integrity Monitor (J-FIM)</span>
-                <span class="proj-idx">01</span>
+                <span class="proj-idx">PROJ_01</span>
               </div>
-              <p class="proj-desc">Cross-platform File Integrity Monitor built in Java to track unauthorized modifications, hashing baseline files, and alerting on integrity breaches.</p>
+              <p class="proj-desc">Engineered an advanced cross-platform security utility designed to continuously scan system files, establish strict cryptographic baselines, and detect unauthorized alterations or tampering in real-time.</p>
+              <ul class="proj-bullets">
+                <li>Utilizes SHA-256 cryptographic hash algorithms to fingerprint files and flag structural modifications.</li>
+                <li>Designed with an optimized multi-threaded loop to monitor critical system directories with minimal performance overhead.</li>
+                <li>Packaged modularly for GitHub release to showcase secure coding standards and object-oriented design patterns.</li>
+              </ul>
               <div class="terminal">
                 <div class="term-bar"><span></span><span></span><span></span></div>
-                <div class="term-line"><span class="term-muted"># Core Features:</span></div>
-                <div class="term-line">1. SHA-256 baseline generation</div>
-                <div class="term-line">2. Real-time system monitoring</div>
-                <div class="term-line">3. Integrity breach alerts<span class="cursor"></span></div>
+                <div class="term-line"><span class="term-muted">// J-FIM Execution Log snippet:</span></div>
+                <div class="term-line">> Initializing baseline registry... [OK]</div>
+                <div class="term-line">> Target directory: /app/secured_zone</div>
+                <div class="term-line">> Status: MONITORING ACTIVE...<span class="cursor"></span></div>
               </div>
-              <div class="proj-stack"><span class="tag">Java</span><span class="tag">Security Tool</span><span class="tag">GitHub Portfolio</span></div>
+              <div class="proj-stack">
+                <span class="tag">Java</span>
+                <span class="tag">Cryptography</span>
+                <span class="tag">SHA-256</span>
+                <span class="tag">GitHub Portfolio</span>
+              </div>
             </div>
 
             <div class="proj-card">
               <div class="proj-head">
-                <span class="proj-title">TryHackMe Security Labs</span>
-                <span class="proj-idx">02</span>
+                <span class="proj-title">TryHackMe Practical Security Labs</span>
+                <span class="proj-idx">PROJ_02</span>
               </div>
-              <p class="proj-desc">Active participant in hands-on cybersecurity labs focusing on penetration testing methodologies, vulnerability discovery, and network defense.</p>
-              <div class="terminal">
-                <div class="term-bar"><span></span><span></span><span></span></div>
-                <div class="term-line"><span class="term-muted"># Labs Completed:</span></div>
-                <div class="term-line">Twenty-five+ rooms & modules</div>
-                <div class="term-line">Focus: Offensive & Defensive</div>
-                <div class="term-line">Status: <span style="color:#4ee08a">ACTIVE & ONGOING</span><span class="cursor"></span></div>
+              <p class="proj-desc">Actively executing hands-on offensive and defensive cybersecurity simulation labs to bridge theoretical networking concepts with real-world threat mitigation strategies.</p>
+              <ul class="proj-bullets">
+                <li>Completed over 25 comprehensive rooms covering vulnerability assessment, privilege escalation, and web exploitation.</li>
+                <li>Practiced reconnaissance workflows using packet analyzers and port scanners (Wireshark, Nmap).</li>
+                <li>Maintains an ongoing lab ledger to build applied proficiency in red teaming methodologies.</li>
+              </ul>
+              <div class="proj-stack">
+                <span class="tag">TryHackMe</span>
+                <span class="tag">Penetration Testing</span>
+                <span class="tag">Wireshark</span>
+                <span class="tag">Nmap</span>
               </div>
-              <div class="proj-stack"><span class="tag">TryHackMe</span><span class="tag">Ethical Hacking</span><span class="tag">Linux</span></div>
             </div>
 
           </div>
         </section>
 
-        <section class="card two-col">
-          <div>
-            <h2 class="sec-title"><span class="num">03</span>Certifications</h2>
-            <ul class="list-check">
-              <li><span class="check-ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="3">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg></span>Cisco Introduction to Cybersecurity</li>
-              <li><span class="check-ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="3">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg></span>ISEA Digital Hygiene Certificate</li>
-            </ul>
-          </div>
-          <div>
-            <h2 class="sec-title"><span class="num">04</span>Focus & Goals</h2>
-            <ul class="list-check">
-              <li><span class="check-ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="3">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg></span>Actively pursuing a Cybersecurity Internship role.</li>
-              <li><span class="check-ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="3">
-                    <path d="M20 6 9 17l-5-5" />
-                  </svg></span>Building open-source defense tools and hosting on GitHub.</li>
-            </ul>
+        <section class="card" id="certifications">
+          <h2 class="sec-title"><span class="num">03</span>Certifications & Continuous Learning</h2>
+          <div class="cert-grid">
+            <div class="cert-box">
+              <span class="cert-title">Introduction to Cybersecurity</span>
+              <span class="cert-org">Cisco Networking Academy</span>
+              <p class="cert-desc">Foundational credentials covering threat landscapes, network security controls, and data confidentiality basics.</p>
+            </div>
+            <div class="cert-box">
+              <span class="cert-title">Digital Hygiene Certificate</span>
+              <span class="cert-org">Information Security Education & Awareness (ISEA)</span>
+              <p class="cert-desc">Validated knowledge regarding digital safety protocols, endpoint defense best practices, and cyber hygiene.</p>
+            </div>
           </div>
         </section>
 
         <section class="card">
-          <h2 class="sec-title"><span class="num">05</span>Interests</h2>
-          <div class="interests-grid">
-            <span class="interest-chip"><span class="dot"></span>File Integrity Monitoring</span>
-            <span class="interest-chip"><span class="dot"></span>Penetration Testing</span>
-            <span class="interest-chip"><span class="dot"></span>Network Security</span>
-            <span class="interest-chip"><span class="dot"></span>Secure Software Development</span>
-            <span class="interest-chip"><span class="dot"></span>TryHackMe Labs</span>
-            <span class="interest-chip"><span class="dot"></span>Vulnerability Assessment</span>
-          </div>
+          <h2 class="sec-title"><span class="num">04</span>Professional Objectives & Roadmap</h2>
+          <ul class="list-check">
+            <li>
+              <span class="check-ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></span>
+              <span><strong>Cybersecurity Internship Pursuit:</strong> Actively looking to secure a hands-on internship role within an industry-leading security team to apply defensive coding principles and incident response frameworks.</span>
+            </li>
+            <li>
+              <span class="check-ic"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="3">
+                  <path d="M20 6 9 17l-5-5" />
+                </svg></span>
+              <span><strong>Open-Source Security Tooling:</strong> Expanding the scope of GitHub repositories with modular Java and Python defensive applications tailored for lightweight system auditing.</span>
+            </li>
+          </ul>
         </section>
 
       </main>
     </div>
+
+    <footer>
+      <div class="footer-line">
+        <span>UNNATI RAMI</span><span class="sep">//</span><span>B.TECH CYBER SECURITY</span><span class="sep">//</span><span>RGPV 2026</span>
+      </div>
+    </footer>
 
   </div>
 </body>
